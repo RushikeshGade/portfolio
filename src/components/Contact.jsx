@@ -110,7 +110,7 @@ const Contact = () => {
             </div>
 
             <footer className="mt-20 pt-8 border-t border-white/5 text-center px-4">
-                <p className="text-gray-400">© 2025 Rushikesh Gade. All rights reserved.</p>
+                <p className="text-gray-400">© 2026 Rushikesh Gade. All rights reserved.</p>
                 <p className="mt-2 text-sm text-gray-600">Built with React, Tailwind CSS & Framer Motion</p>
             </footer>
         </section>

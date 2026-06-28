@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Mail, Phone, Code, Database, Globe, Cpu } from 'lucide-react';
+import { Github, Mail, Phone, Code, Database, Globe, Cpu, Linkedin } from 'lucide-react';
 
 
 const Hero = () => {
@@ -8,7 +8,7 @@ const Hero = () => {
     const [isDeleting, setIsDeleting] = useState(false);
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(150);
-    const roles = ["Computer Engineer", "Problem Solver", "Full Stack Developer", "Tech Enthusiast"];
+    const roles = ["Data Science", "AI/ML Engineer", "Python Developer"];
 
     useEffect(() => {
 
@@ -186,10 +186,13 @@ const Hero = () => {
                         <a href="https://github.com/RushikeshGade" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-6 border border-white/5 hover:border-purple-500/50">
                             <Github size={28} />
                         </a>
-                        <a href="mailto:rushigade0707@gmail.com" className="p-3 bg-white/5 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 transform hover:scale-110 hover:-rotate-6 border border-white/5 hover:border-blue-500/50">
+                        <a href="https://linkedin.com/in/rushikesh-gade" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 transform hover:scale-110 hover:-rotate-6 border border-white/5 hover:border-blue-500/50">
+                            <Linkedin size={28} />
+                        </a>
+                        <a href="mailto:rushikeshgade2209@gmail.com" className="p-3 bg-white/5 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-6 border border-white/5 hover:border-pink-500/50">
                             <Mail size={28} />
                         </a>
-                        <a href="tel:+919307072042" className="p-3 bg-white/5 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-6 border border-white/5 hover:border-pink-500/50">
+                        <a href="tel:+919307072042" className="p-3 bg-white/5 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 transform hover:scale-110 hover:-rotate-6 border border-white/5 hover:border-indigo-500/50">
                             <Phone size={28} />
                         </a>
                     </motion.div>

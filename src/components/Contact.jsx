@@ -33,13 +33,13 @@ const Contact = () => {
                     >
                         <h3 className="text-3xl font-bold mb-8">Let's Talk</h3>
                         <div className="space-y-6">
-                            <a href="mailto:rushigade0707@gmail.com" className="flex items-center gap-6 p-6 bg-surface/50 backdrop-blur-sm rounded-2xl border border-white/5 hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5">
+                            <a href="mailto:rushikeshgade2209@gmail.com" className="flex items-center gap-6 p-6 bg-surface/50 backdrop-blur-sm rounded-2xl border border-white/5 hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5">
                                 <div className="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white shadow-lg">
                                     <Mail size={28} />
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-lg text-white mb-1">Email Me</h4>
-                                    <p className="text-gray-400 group-hover:text-primary transition-colors">rushigade0707@gmail.com</p>
+                                    <p className="text-gray-400 group-hover:text-primary transition-colors">rushikeshgade2209@gmail.com</p>
                                 </div>
                             </a>
 
@@ -50,7 +50,6 @@ const Contact = () => {
                                 <div>
                                     <h4 className="font-bold text-lg text-white mb-1">Call Me</h4>
                                     <p className="text-gray-400 group-hover:text-secondary transition-colors">+91 9307072042</p>
-                                    <p className="text-xs text-gray-500 mt-1">+91 9130094838</p>
                                 </div>
                             </a>
 

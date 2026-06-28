@@ -1,64 +1,73 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Folder, Github, ExternalLink, Code } from 'lucide-react';
+import { Folder, Github, ChevronRight, BarChart2, CheckCircle2 } from 'lucide-react';
+import TiltCard from './TiltCard';
 
 const Projects = () => {
     const projects = [
         {
-            title: "FLAN-T5 Summarizer & Q&A",
-            description: "A Generative AI CLI tool for abstractive text summarization and Q&A. Optimized inference speed by 25% using Hugging Face Transformers and PyTorch.",
-            tags: ["GenAI", "Transformers", "PyTorch", "HuggingFace"],
-            color: "from-indigo-600 to-violet-600",
-            links: { github: "https://github.com/RushikeshGade" }
+            title: "Smart Hire (AI-Powered ATS)",
+            description: "AI-driven recruitment and applicant tracking system (ATS) that parses, extracts, and ranks candidate resumes using Natural Language Processing.",
+            highlights: [
+                "Developed a resume parsing pipeline using spaCy and NLTK to extract contact info, skills, and experience from PDFs.",
+                "Implemented candidate-job matching utilizing Sentence Transformers and Cosine Similarity.",
+                "Built an interactive recruiter dashboard with Streamlit."
+            ],
+            tags: ["Python", "Streamlit", "spaCy", "Sentence Transformers", "NLTK", "FAISS"],
+            color: "from-purple-600 to-indigo-600",
+            github: "https://github.com/RushikeshGade/Smart-Hire"
         },
         {
-            title: "Real-time Image Detection",
-            description: "Deep Learning system using CNN and OpenCV capable of detecting 5 distinct objects in real-time with over 90% accuracy.",
-            tags: ["Deep Learning", "TensorFlow", "Keras", "OpenCV"],
+            title: "Surface Crack Detection using CNN",
+            description: "Industrial defect detection system leveraging Convolutional Neural Networks for classifying surfaces.",
+            highlights: [
+                "Developed an industrial defect detection system using Convolutional Neural Networks.",
+                "Performed image preprocessing, augmentation, model training, and evaluation.",
+                "Implemented binary classification for crack and non-crack images."
+            ],
+            tags: ["Python", "TensorFlow", "Keras", "OpenCV"],
             color: "from-blue-600 to-cyan-600",
-            links: { github: "https://github.com/RushikeshGade" }
+            github: "https://github.com/RushikeshGade"
         },
         {
-            title: "Breast Cancer Detection",
-            description: "Machine Learning model aimed at medical diagnostics, achieving 92% accuracy using Logistic Regression and SVM algorithms.",
-            tags: ["Machine Learning", "Scikit-learn", "Pandas", "Healthcare"],
+            title: "Financial Time Series Forecasting using LSTM",
+            description: "Deep learning stock price forecasting system analyzing historical sequences and predicting trends.",
+            highlights: [
+                "Built a stock price forecasting system using LSTM networks.",
+                "Applied sequence generation and time-series prediction techniques.",
+                "Evaluated performance using MAE, MSE, and RMSE."
+            ],
+            tags: ["Python", "TensorFlow", "Keras", "Pandas", "LSTM"],
+            color: "from-indigo-600 to-violet-600",
+            github: "https://github.com/RushikeshGade"
+        },
+        {
+            title: "Transformer-Based Sentiment Analysis",
+            description: "NLP transformer classifier custom-built for sentiment analysis on text datasets.",
+            highlights: [
+                "Developed a Transformer-based model for sentiment classification of text data.",
+                "Implemented tokenization, embeddings, positional encoding, and Multi-Head Self-Attention.",
+                "Trained and evaluated the model to classify Positive and Negative sentiments."
+            ],
+            tags: ["Python", "TensorFlow", "Keras", "Transformers", "NLP", "NumPy"],
             color: "from-pink-600 to-rose-600",
-            links: { github: "https://github.com/RushikeshGade" }
+            github: "https://github.com/RushikeshGade"
         },
         {
-            title: "Duplicate File Cleaner & Log Auto",
-            description: "Python automation scripts to remove duplicate files and automate log generation, integrated with email alerts. Improved system monitoring efficiency by 30%.",
-            tags: ["Python", "Automation", "Scripting", "OS"],
-            color: "from-orange-600 to-red-600",
-            links: { github: "https://github.com/RushikeshGade" }
-        },
-        {
-            title: "Marvellous Portal Application",
-            description: "A comprehensive web application developed using Spring Boot, Java, and MongoDB. Implemented CRUD operations through RESTful APIs and ensured robust testing of endpoints using Postman.",
-            tags: ["Spring Boot", "Java", "MongoDB", "REST API"],
-            color: "from-pink-600 to-rose-600",
-            links: { github: "https://github.com/RushikeshGade" }
-        },
-        {
-            title: "Generalised Data Structures Library",
-            description: "A comprehensive C++ library providing generic implementations of linear and non-linear data structures. Designed with object-oriented principles, it offers ready-made functionalities for fundamental and advanced operations.",
-            tags: ["C++", "STL", "Generic Programming"],
-            color: "from-blue-600 to-indigo-600",
-            links: { github: "https://github.com/RushikeshGade" }
-        },
-        {
-            title: "File Packer Unpacker",
-            description: "A system programming tool that packs multiple files into a single archive with metadata and encryption capabilities. Includes functionality to unpack and restore files to their original state with data integrity.",
-            tags: ["System Programming", "C/C++", "Encryption"],
+            title: "ML & DL Case Studies",
+            description: "A comprehensive compilation of standard data science projects applying classification, regression, and clustering algorithms.",
+            caseStudies: [
+                "Titanic Survival Prediction",
+                "Diabetes Detection System",
+                "Breast Cancer Detection",
+                "House Price Prediction",
+                "Customer Segmentation using K-Means",
+                "Loan Default Prediction",
+                "Ad Click Prediction"
+            ],
+            tags: ["Scikit-learn", "Pandas", "Matplotlib", "Seaborn", "Clustering", "EDA"],
             color: "from-emerald-600 to-teal-600",
-            links: { github: "https://github.com/RushikeshGade" }
-        },
-        {
-            title: "Chat Application",
-            description: "A multi-client real-time chat application built using Java Socket programming. Features a server-client architecture allowing seamless communication efficiently across a network.",
-            tags: ["Java", "Socket Programming", "Networking"],
-            color: "from-purple-600 to-pink-600",
-            links: { github: "https://github.com/RushikeshGade" }
+            github: "https://github.com/RushikeshGade"
         }
     ];
 
@@ -73,14 +82,14 @@ const Projects = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        Featured <span className="text-white">Projects</span>
+                        Featured <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Projects</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Showcasing my technical expertise through practical applications and system-level programming.
+                    <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light">
+                        Showcasing practical application of machine learning, deep learning, automation, and computer vision.
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.title}
@@ -88,45 +97,73 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group relative bg-surface rounded-3xl overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 flex flex-col h-full"
+                            className="h-full"
                         >
+                            <TiltCard className="group bg-surface/30 backdrop-blur-md rounded-3xl overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 flex flex-col h-full">
                             {/* Abstract Gradient Header */}
-                            <div className={`h-24 bg-gradient-to-r ${project.color} opacity-80 group-hover:opacity-100 transition-opacity duration-500`} />
+                            <div className={`h-3 bg-gradient-to-r ${project.color} w-full`} />
 
                             <div className="p-8 flex flex-col flex-grow relative">
-                                {/* Floating Icon */}
-                                <div className="absolute -top-10 left-8 p-4 bg-surface rounded-2xl border border-white/5 shadow-xl group-hover:scale-110 transition-transform duration-300">
-                                    <Code className="text-white" size={32} />
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="p-3 bg-white/5 rounded-2xl border border-white/5 text-primary group-hover:scale-110 transition-transform duration-300">
+                                        <Folder size={24} />
+                                    </div>
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-2.5 bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white rounded-xl border border-white/5 transition-all"
+                                    >
+                                        <Github size={20} />
+                                    </a>
                                 </div>
 
-                                <div className="mt-8 mb-6">
+                                <div className="mb-6 flex-grow">
                                     <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-primary transition-colors">
                                         {project.title}
                                     </h3>
-                                    <p className="text-gray-400 text-sm leading-relaxed">
+                                    <p className="text-gray-450 text-sm leading-relaxed mb-6 font-light">
                                         {project.description}
                                     </p>
+
+                                    {/* Highlights or Case Studies list */}
+                                    {project.highlights ? (
+                                        <ul className="space-y-2 mb-6">
+                                            {project.highlights.map((highlight, i) => (
+                                                <li key={i} className="flex items-start gap-2.5 text-xs text-gray-300 leading-relaxed font-light">
+                                                    <ChevronRight size={14} className="text-primary mt-0.5 shrink-0" />
+                                                    <span>{highlight}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    ) : project.caseStudies ? (
+                                        <div className="mb-6 bg-black/10 p-4 rounded-2xl border border-white/5">
+                                            <span className="text-xs font-semibold text-gray-400 flex items-center gap-1.5 mb-2.5">
+                                                <BarChart2 size={14} className="text-secondary" /> Included Case Studies:
+                                            </span>
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                                {project.caseStudies.map((study, i) => (
+                                                    <div key={i} className="flex items-center gap-2 text-xs text-gray-300 font-light">
+                                                        <CheckCircle2 size={12} className="text-emerald-400 shrink-0" />
+                                                        <span>{study}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ) : null}
                                 </div>
 
-                                <div className="mt-auto">
-                                    <div className="flex flex-wrap gap-2 mb-6">
+                                <div className="mt-auto pt-4 border-t border-white/5">
+                                    <div className="flex flex-wrap gap-1.5">
                                         {project.tags.map(tag => (
-                                            <span key={tag} className="text-xs font-bold text-gray-300 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
+                                            <span key={tag} className="text-xs font-medium text-gray-400 bg-white/5 px-2.5 py-1 rounded-lg border border-white/5">
                                                 #{tag}
                                             </span>
                                         ))}
                                     </div>
-
-                                    <a
-                                        href={project.links.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-primary transition-colors"
-                                    >
-                                        View Source <Github size={16} />
-                                    </a>
                                 </div>
                             </div>
+                            </TiltCard>
                         </motion.div>
                     ))}
                 </div>
